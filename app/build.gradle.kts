@@ -56,4 +56,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // navegacion compose
+
+    implementation("androidx.navigation:navigation-compose:2.8.9")
+
+    //Esta es la libreria para cargar imagenes de internet
+    implementation(libs.coil.compose)
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
+
 }
