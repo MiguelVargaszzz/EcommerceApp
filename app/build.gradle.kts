@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -49,6 +50,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -59,11 +63,16 @@ dependencies {
 
     // navegacion compose
 
-    implementation("androidx.navigation:navigation-compose:2.8.9")
+    implementation(libs.androidx.navigation.compose)
 
     //Esta es la libreria para cargar imagenes de internet
     implementation(libs.coil.compose)
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation(libs.coil.compose.v250)
 
+    // firebase
+    implementation(platform(libs.firebase.bom))
+
+    // auth
+    implementation(libs.firebase.auth)
 
 }

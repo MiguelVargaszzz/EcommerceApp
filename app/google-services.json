@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "686006878238",
+    "project_id": "eccomers-app",
+    "storage_bucket": "eccomers-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686006878238:android:71626c30353f91bc8bae0f",
+        "android_client_info": {
+          "package_name": "co.miguel.vargas.ecommerceapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR_AkmDL1fypGtO7grVJEV5SThbE2ODdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

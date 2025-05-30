@@ -30,13 +30,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 @OptIn(ExperimentalMaterial3Api::class)
 
 @Composable
-fun HomeSreen(onClickLogout: () -> Unit = {}){
-
-
+fun HomeScreen(onClickLogout: () -> Unit = {}){
+    val auth = Firebase.auth
+    val user = auth.currentUser
     Scaffold (
         topBar = {
             val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -62,8 +64,15 @@ fun HomeSreen(onClickLogout: () -> Unit = {}){
                         )
                     }
                 },
+
                 actions = {
+                    if (user != null) {
+                        Text(user.email.toString())
+                    } else {
+                        Text("No hay usuario")
+                    }
                     IconButton(onClick = {
+                        auth.signOut()
                         onClickLogout()
                     }) {
                         Icon(
@@ -112,7 +121,7 @@ fun HomeSreen(onClickLogout: () -> Unit = {}){
 @Preview
 @Composable
 fun HomeScreenPreview() {
-    HomeSreen()
+    HomeScreen()
 }
 
 
